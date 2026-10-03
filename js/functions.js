@@ -40,7 +40,7 @@ async function Services(data) {
 }
 
 function servciesPopup(index) {
-  let data = services[index];
+   data = services[index];
   $(".services.popup").html(`
     
 <div class="content">
