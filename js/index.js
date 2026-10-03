@@ -6,7 +6,15 @@ getData("languages");
 let sectorsContent = document.querySelector(".popup.sectors .content ");
 getData("sectors");
 
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("Loading").style.display = "none";
+});
 
+wow = new WOW({
+  animateClass: "animate__animated"
+
+});
+wow.init();
 
 window.addEventListener("scroll", function (e) {
   if (this.window.scrollY > 5) {

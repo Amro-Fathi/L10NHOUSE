@@ -75,7 +75,7 @@
     <header id="Home">
       <div class="container">
         <div class="row">
-          <div class="col-md-6 col-12 part1 d-flex flex-column align-items-start justify-content-center">
+          <div  class="animate__animated animate__bounceIn col-md-6 col-12 part1 d-flex flex-column align-items-start justify-content-center">
             <h1 class="my-2 fw-bolder">L10N House</h1>
             <p class="my-2">will help you communicate your message</p>
             <div class="cd-intro">
@@ -92,8 +92,8 @@
               <span class="fw-bolder">Play Video</span>
             </div>
           </div>
-          <div class="col-md-6 col-12 part2">
-            <img src="./images/globe-png-39540.png" alt="" class="img-fluid m-auto d-block" />
+          <div class=" col-md-6 col-12 part2">
+            <img   src="./images/globe-png-39540.png" alt="" class="animate__animated animate__zoomIn img-fluid m-auto d-block" />
           </div>
         </div>
       </div>
@@ -116,10 +116,10 @@
 
       <div class="container">
         <div class="row">
-          <div class="col-md-5 img">
+          <div class="animate__animated animate__zoomIn wow col-md-5 img">
             <img src="./images/about.png" class="img-fluid" />
           </div>
-          <div class="col-md-7 content">
+          <div class="animate__animated animate__bounceIn wow col-md-7 content">
             <p class="mb-0">
               Located in the heart of dynamic Egypt,
               <span><span class="firstColor">L10N</span> <span class="secondColor">House</span></span>
@@ -148,11 +148,11 @@
     </section>
 
     <section id="Video">
-      <div class="content text-center">
-        <div class="title mb-5">
+      <div class="content  text-center">
+        <div class="title mb-5 animate__animated animate__heartBeat wow">
           <h2>WATCH VIDEO</h2>
         </div>
-        <i onclick="openPopup('video')" class="fa-brands fa-youtube"></i>
+        <i onclick="openPopup('video')" class="fa-brands fa-youtube animate__animated animate__heartBeat wow"></i>
       </div>
     </section>
 
@@ -163,7 +163,7 @@
 
       <div class="container">
         <div class="content">
-          <div class="part">
+          <div class="part animate__flipInY wow animate__animated">
             <div class="box">
               <div class="item">
                 <h3>The Best</h3>
@@ -175,7 +175,7 @@
               </div>
             </div>
           </div>
-          <div class="part">
+          <div class="part animate__flipInY wow animate__animated">
             <div class="box">
               <div class="item">
                 <h3>Solutions for all your language challenges</h3>
@@ -188,7 +188,7 @@
               </div>
             </div>
           </div>
-          <div class="part">
+          <div class="part animate__flipInY wow animate__animated">
             <div class="box">
               <div class="item">
                 <h3>Our highly qualified teams</h3>
@@ -203,21 +203,23 @@
         </div>
       </div>
     </section>
+
+
     <div id="Language_Sectors">
       <section class="language-sectors py-5">
         <div class="content">
-          <div class="title mb-5">
+          <div class="title mb-5 animate__bounceInDown wow animate__animated">
             <h2>LANGUAGES & SECTORS</h2>
           </div>
           <div class="buttons">
-            <button onclick="openPopup('sectors')">Sectors</button>
-            <button onclick="openPopup('languages')">Languages</button>
+            <button data-wow-delay="1s" class="animate__lightSpeedInLeft wow animate__animated" onclick="openPopup('sectors')">Sectors</button>
+            <button data-wow-delay="1s" class="animate__lightSpeedInRight wow animate__animated" onclick="openPopup('languages')">Languages</button>
           </div>
         </div>
       </section>
       <section class="clients py-5">
         <div class="content">
-          <div class="title mb-5">
+          <div class="title mb-5 animate__bounceInUp wow animate__animated">
             <h2>SATISFIED CLIENTS</h2>
           </div>
 
@@ -240,14 +242,15 @@
 
     <section id="Contact" class="py-5 d-flex flex-column">
       <div class="content">
-        <div class="title mb-3">
+        <div class="title mb-3 animate__bounceInUp wow animate__animated">
           <h2>GET IN TOUCH</h2>
         </div>
-        <p class="text-white mb-5 m-auto text-center">For More information, please do not hesitate to contact us</p>
+        <p class="text-white mb-5 m-auto text-center animate__bounceInDown wow animate__animated">For More information, please do not hesitate to contact us</p>
+
 
         <div class="container">
           <div class="row row-gap-4">
-            <div class="col-md-6 part">
+            <div class="animate__bounceInLeft wow animate__animated col-md-6 part">
               <form action="">
                 <div class="mb-3 d-flex flex-md-nowrap flex-wrap row-gap-3 column-gap-4">
                   <input type="text" class="form-control" id="Name" placeholder="Full Name*" />
@@ -262,7 +265,7 @@
                 <button>Send Message</button>
               </form>
             </div>
-            <div class="col-md-6 part">
+            <div class="animate__bounceInRight wow animate__animated col-md-6 part">
               <div class="right">
                 <div class="d-flex align-items-start gap-3 mb-3">
                   <i class="fa-solid fa-location-dot fs-4 mt-1"></i>
@@ -332,11 +335,7 @@
     </div>
 
     <div class="sectors popup py-5" data-popup-name="sectors" onclick="stopPopupPropagation()">
-      <div class="content">
-
-
-
-      </div>
+      <div class="content"></div>
     </div>
 
     <div class="video popup py-5" data-popup-name="video">
@@ -357,6 +356,10 @@
       To Top
     </div>
 
+
+    <div class="popup" id="Loading">
+      <img src="./images/logo.png" alt="">
+    </div>
     <footer class="bg-dark py-2 text-light text-center">&copy; 2021 <span class="fw-bolder">SemiCode</span> , Ltd. | All Rights Reserved .</footer>
     <script src="js/bootstrap.js"></script>
     <script src="js/jQuery.js"></script>

@@ -375,6 +375,20 @@ section {
             @include position($r: 0px, $t: 0px);
             padding: 10px;
             border-radius: 20px;
+            @include responsive(350) {
+              @include position($r: 0px, $t: 40px);
+            }
+            @include responsive(450) {
+              @include position($r: -15px, $t: 0px);
+            }
+            @include responsive(650) {
+              @include position($r: 0px, $t: 0px);
+            }
+            span {
+              @include responsive(350) {
+                display: none;
+              }
+            }
           }
         }
 
@@ -388,7 +402,7 @@ section {
               display: flex;
               align-items: center;
               gap: 10px;
-              .fa-circle {
+              i {
                 flex-shrink: 0;
               }
               span {
@@ -473,6 +487,13 @@ section {
         background-color: #fff;
         width: fit-content;
         column-gap: 40px;
+        @include responsive(350) {
+          column-gap: 20px;
+          text-align: center;
+        }
+        @include responsive(650) {
+          column-gap: 40px;
+        }
         padding: 20px;
         border-radius: 30px;
         .icon {
@@ -483,10 +504,16 @@ section {
             }
           }
           @include flex();
+          @include responsive(350) {
+            flex-direction: column;
+          }
           column-gap: 10px;
           i {
             color: $firstColor;
             font-size: 40px;
+            @include responsive(350) {
+              font-size: 20px;
+            }
           }
         }
       }
@@ -504,7 +531,7 @@ section {
             transform: scale(1.1);
             .arrow i {
               animation: sectorArrow 2s forwards;
-             
+
               box-shadow:
                 0 5px 15px color-mix(in srgb, var(--sector-color), transparent 25%),
                 0 0 0 5px color-mix(in srgb, var(--sector-color), transparent 80%);
@@ -526,7 +553,6 @@ section {
             height: 35px;
 
             i {
-
               color: #fff;
               transition-duration: 1s;
               width: 35px;
@@ -550,6 +576,16 @@ section {
   }
 }
 
+#Loading {
+  @include flex();
+  background: linear-gradient(to right, #decba4, #3e5151); 
+
+  img {
+    width: 150px;
+    height: 150px;
+    animation: loading 1s alternate infinite ;
+  }
+}
 // color.adjust($item-color, $lightness: 20%);
 // color.adjust(list.nth($lang-colors, $i), $lightness: -40%);
 
@@ -606,5 +642,14 @@ section {
     border-radius: 50%;
     transform: translateX(-100%) scale(1.12);
     justify-content: flex-end;
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1.2);
   }
 }

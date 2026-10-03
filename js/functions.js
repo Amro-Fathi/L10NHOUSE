@@ -21,10 +21,11 @@ async function getData(dataName) {
 }
 
 async function Services(data) {
+  let animations =["animate__fadeInTopLeft" ,"animate__fadeInTopRight" , "animate__fadeInBottomLeft" , "animate__fadeInBottomRight" ];
   data.forEach((item, index) => {
     $("#Services .row").append(
       `
-       <div class="col-lg-6" ondblclick="openPopup('services')">
+       <div data-wow-delay="${index * 0.2}s" class="animate__animated ${animations[index]} wow col-lg-6" ondblclick="openPopup('services')">
             <div class="item">
               <img src="./images/${item.icon}" />
               <h4 class="mb-0">${item.title}</h4>
@@ -137,7 +138,7 @@ function languagesShow(data, flags) {
 
             <div class="country mb-5">
               <h3>Languages From <span class="colored">${item.continent}</span></h3>
-              <div class="counter">${item.languages.length} Languages</div>
+              <div class="counter">${item.languages.length} <span>Languages</span></div>
             </div>
 
 
