@@ -7,7 +7,9 @@ let sectorsContent = document.querySelector(".popup.sectors .content ");
 getData("sectors");
 
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("Loading").style.display = "none";
+  setTimeout(function(){
+    document.querySelector("#Loading").classList.add("d-none")
+  }, 1000);
 });
 
 wow = new WOW({
