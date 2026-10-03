@@ -1,0 +1,119 @@
+@use "../abstracts" as *;
+
+#Contact {
+  @include bg-img("../images/contact-bg.png");
+  background-attachment: fixed;
+  position: relative;
+  @include flex();
+  &::before {
+    content: "";
+    display: block;
+    @include dimensions(100%, 100%);
+    background: radial-gradient(#68b703, #305d00);
+    opacity: 0.8;
+    @include position($t: 0, $l: 0);
+  }
+
+  .content {
+    width: 100%;
+    position: relative;
+    .title {
+      color: #fff;
+      &::before {
+        background-color: #fff;
+      }
+    }
+    .part {
+      @include responsive(350) {
+        max-width: 300px;
+        // margin: auto;
+        margin-inline: auto;
+      }
+      @include responsive(650) {
+        max-width: initial;
+      }
+      form {
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #fff;
+
+        input,
+        textarea {
+          transition-duration: 0.7s;
+          &:focus {
+            border-color: $secondColor;
+            transform: translateY(-4px);
+            box-shadow:
+              0 4px 12px rgba(0, 0, 0, 0.1),
+              0 0 12px rgba($secondColor, 0.25);
+            outline: none;
+          }
+        }
+        textarea {
+          height: 150px;
+          resize: none;
+        }
+        button {
+          background-color: $secondColor;
+          padding: 10px 15px;
+          border: 1px #fff solid;
+          border-radius: 8px;
+          color: #fff;
+          cursor: pointer;
+          transition-duration: 0.7s;
+          &:hover {
+            transform: translateY(-7px);
+            background-color: $firstColor;
+
+            box-shadow:
+              0 5px 10px rgba(0, 0, 0, 0.15),
+              0 0 15px rgba($firstColor, 0.35);
+          }
+        }
+      }
+
+      .right {
+        height: 100%;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #fff;
+        i {
+          color: $secondColor;
+        }
+        .icons {
+          .social {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            i{
+                color: white;
+            }
+           @include flex();
+            color: #fff;
+            font-size: 20px;
+            text-decoration: none;
+
+            transition-duration: 0.3s;
+
+            &:hover {
+              transform: translateY(-5px) scale(1.08);
+              color: #fff;
+            }
+          }
+
+          .facebook {
+            background-color: #1877F2;
+          }
+
+          .instagram {
+            background-color: #E4405F;
+          }
+
+          .youtube {
+            background-color: #CD201F;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@use "../abstracts" as *;
+
+#Services {
+  background: linear-gradient(to right, rgb(238, 242, 243), rgb(142, 158, 171));
+
+  .item {
+    @include flex($jc: center, $ai: center, $dir: column);
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    row-gap: 20px;
+    img {
+      @include dimensions(75px, 75px);
+    }
+    padding: 20px;
+    border-radius: 20px;
+    transition-duration: 0.7s;
+    &:hover {
+      background-color: rgb(255, 255, 255);
+      transform: translateY(-10px);
+      box-shadow: rgba(0, 0, 0, 0.5) 0px 20px 50px;
+    }
+    .clickable-pointer{
+        cursor: pointer;
+    }
+  }
+}

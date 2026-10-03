@@ -1,0 +1,10 @@
+@use "../abstracts" as *;
+
+
+#About{
+    .img{
+        img{
+            border-radius: 10px;
+        }
+    }
+}

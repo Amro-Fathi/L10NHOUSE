@@ -1,0 +1,93 @@
+@use "../abstracts" as *;
+@keyframes glowMove {
+  0% {
+    background-position: 0% 50%;
+    opacity: 1;
+  }
+
+  75% {
+    background-position: 100% 50%;
+    opacity: 1;
+  }
+
+  100% {
+    background-position: 150% 50%;
+    opacity: 0;
+  }
+}
+
+#Why {
+  background: linear-gradient(to right, rgb(238, 242, 243), rgb(142, 158, 171));
+
+  .content {
+    @include flex();
+    @include responsive(350){
+      flex-wrap: wrap;
+      row-gap: 20px;
+    }
+    .part {
+      @include responsive(350){
+       width: 280px;
+      }
+      
+      max-width: 350px;
+      margin: auto;
+      height: 450px;
+      background-color: $secondColor;
+      border-radius: 10px;
+
+      &:nth-of-type(1) .box {
+        @include bg-img("../images/best.jpg");
+      }
+      &:nth-of-type(2) .box {
+        @include bg-img("../images/solutions.jpg");
+      }
+      &:nth-of-type(3) .box {
+        @include bg-img("../images/teamwork.jpg");
+      }
+
+      .box {
+        border-radius: 10px;
+        // overflow: hidden;
+        @include dimensions(100%, 100%);
+        @include flex($dir: column, $jc: end);
+        transition-duration: 0.7s;
+        position: relative;
+        .item {
+          background: linear-gradient(0deg, rgb(30, 32, 34) 0%, transparent 75%);
+          border-radius: 10px;
+          padding: 20px;
+          color: #fff;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          inset: -2px;
+          background: linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.2) 60%,
+            rgba(255, 255, 255, 0.4) 72%,
+            rgba(204, 217, 227, 0.35) 82%,
+            rgba(255, 255, 255, 0.4) 92%,
+            transparent 100%
+          );
+
+          background-size: 300% 300%;
+          filter: blur(8px);
+          opacity: 0;
+        }
+      }
+      &:hover .box {
+        &::before {
+          animation: glowMove 1s linear forwards;
+          opacity: 0.7;
+        }
+        transform: translate(-7px, 7px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+    }
+  }
+
+}

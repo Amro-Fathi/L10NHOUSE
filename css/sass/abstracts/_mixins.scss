@@ -1,0 +1,63 @@
+@mixin position($p : absolute , $t:initial , $r:initial , $b:initial , $l:initial , $z:initial){
+    position: $p;
+    top: $t;
+    right: $r;
+    bottom: $b;
+    left: $l;
+    z-index: $z;
+}
+
+@mixin dimensions($w:initial , $h:initial){
+    width: $w;
+    height: $h;
+}
+
+@mixin flex($jc:center , $ai:center , $dir:row){
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $jc;
+    align-items: $ai;
+
+}
+
+
+@mixin responsive($w){
+    
+@if($w == 350){
+    @media (max-width: 1300px) {
+        @content;
+}
+}
+@else if ($w == 450){
+@media (min-width: 371px) and (max-width: 1300px) {
+@content;
+}
+}
+@else if ($w == 650){
+@media (min-width: 577px) and (max-width: 1300px) {
+@content;
+}
+}
+@else if ($w == 850){
+@media (min-width: 769px) and (max-width: 1300px) {
+@content;
+}
+}
+@else if ($w == 1050){
+@media (min-width: 992px) and (max-width: 1300px) {
+@content;
+}
+}
+@else if ($w == 1250){
+@media (min-width: 1181px) and (max-width: 1300px) {
+@content;
+}
+}
+}
+
+@mixin bg-img($url : ""){
+background-image: url($url);
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+}

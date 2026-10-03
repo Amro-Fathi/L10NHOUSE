@@ -1,0 +1,39 @@
+@use "../abstracts" as *;
+
+#Video {
+  .title {
+    color: #fff;
+    &::before {
+      background: #fff;
+    }
+  }
+  @include bg-img("../images/video-bg.jpg");
+  background-attachment: fixed;
+  min-height: 300px;
+  position: relative;
+  @include flex();
+  &::before {
+    content: "";
+    display: block;
+    @include dimensions(100%, 100%);
+    background: radial-gradient(#68b703, #305d00);
+    opacity: 0.8;
+    @include position($t: 0, $l: 0);
+  }
+
+  .content {
+    position: relative;
+    i {
+      font-size: 70px;
+      color: #fff;
+      cursor: pointer;
+      transition-duration: 0.7s;
+    }
+  }
+
+  &:hover {
+    .content i {
+      scale: 1.1;
+    }
+  }
+}

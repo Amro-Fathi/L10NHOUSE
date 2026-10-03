@@ -1,0 +1,87 @@
+@use "../abstracts" as *;
+
+nav.navbar {
+  @include position($p: fixed, $t: 0, $l: 0, $z: 1000);
+  transition-duration: 0.6s;
+  @include dimensions(100%);
+  .navbar-brand {
+    width: 12%;
+    transition-duration: 0.6s;
+    @include responsive(350) {
+      width: 30%;
+    }
+    @include responsive(450) {
+      width: 25%;
+    }
+    @include responsive(650) {
+      width: 20%;
+    }
+    @include responsive(850) {
+      width: 15%;
+    }
+    @include responsive(1050) {
+      width: 10%;
+    }
+    @include responsive(1250) {
+      width: 8%;
+    }
+  }
+  .navbar-toggler {
+    box-shadow: none;
+    border: $firstColor 2px solid;
+    @include responsive(350) {
+      @include dimensions(50px, 40px);
+      @include flex($dir: column, $jc: space-around);
+    }
+    @include responsive(1050) {
+      display: none;
+    }
+
+    span {
+      @include dimensions(100%, 2px);
+      background-color: $firstColor;
+    }
+  }
+
+  .navbar-nav {
+    .nav-item a.nav-link {
+      padding: 0;
+      position: relative;
+      color: $firstColor;
+      width: max-content;
+      margin: auto;
+
+      &::after {
+        content: "";
+        @include position($b: -5px, $l: 50%);
+        @include dimensions(0%, 3px);
+        transform: translateX(-50%);
+        transition-duration: 0.7s;
+        background-color: $secondColor;
+      }
+      &:hover::after,
+      &.active::after {
+        width: 100%;
+      }
+    }
+
+    @include responsive(350) {
+      background: linear-gradient(-110deg, #eef2f3 0%, #dce3e7 35%, #c4d0d7 70%, #a9b8c2 100%);
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    @include responsive(1050) {
+      background: none;
+    }
+  }
+  &.scrolled {
+    background-color: #fff;
+    .navbar-brand {
+      width: 8%;
+      @include responsive(350){
+        width: 20%;
+      };
+    }
+  }
+}
