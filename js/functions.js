@@ -263,7 +263,7 @@ function prepareSectors(data) {
           class="item"
           style="
             --sector-color: ${currentSector.colorName};
-            background-image: url('../images/sectors/${currentSector["bg-img"]}');
+            background-image: url('./images/sectors/${currentSector["bg-img"]}');
           "
         >
           <div class="order mb-2">${index + 1}</div>
