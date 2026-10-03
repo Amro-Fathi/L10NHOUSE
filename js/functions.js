@@ -209,7 +209,7 @@ function searchLanguage() {
 
 // SECTORS
 function showSectors(data) {
-  console.log(data);
+
   sectorsContent.innerHTML = `
   
           <i class="fa-solid fa-xmark close" onclick="closePopup('sectors')"></i>
