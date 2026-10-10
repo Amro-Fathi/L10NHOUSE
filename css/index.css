@@ -742,7 +742,7 @@ section:hover .title::before {
   transform: scale(1.1);
 }
 .popup.sectors .content .body .part .item:hover .arrow i {
-  animation: sectorArrow 2s forwards;
+  transform: scale(1.2);
   box-shadow: 0 5px 15px color-mix(in srgb, var(--sector-color), transparent 25%), 0 0 0 5px color-mix(in srgb, var(--sector-color), transparent 80%);
 }
 .popup.sectors .content .body .part .item {
@@ -802,56 +802,7 @@ section:hover .title::before {
   animation: loading 1s alternate infinite;
 }
 
-@keyframes sectorArrow {
-  0% {
-    left: 0%;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    transform: translateX(0) scale(1.12);
-    justify-content: flex-end;
-  }
-  20% {
-    left: 0%;
-    width: 100%;
-    height: 100%;
-    border-radius: 0%;
-    transform: translateX(0) scale(1.12);
-    justify-content: flex-end;
-  }
-  30% {
-    left: 100%;
-    width: 100%;
-    height: 100%;
-    border-radius: 0%;
-    transform: translateX(-100%) scale(1.12);
-    justify-content: flex-end;
-  }
-  40% {
-    left: 100%;
-    width: 100%;
-    height: 100%;
-    border-radius: 0%;
-    transform: translateX(-100%) scale(1.12);
-    justify-content: flex-end;
-  }
-  70% {
-    left: 100%;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    transform: translateX(-100%) scale(1.12);
-    justify-content: flex-end;
-  }
-  100% {
-    left: 100%;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    transform: translateX(-100%) scale(1.12);
-    justify-content: flex-end;
-  }
-}
+
 @keyframes loading {
   0% {
     transform: scale(0.9);

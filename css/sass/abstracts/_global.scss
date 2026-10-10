@@ -530,8 +530,7 @@ section {
           &:hover {
             transform: scale(1.1);
             .arrow i {
-              animation: sectorArrow 2s forwards;
-
+              transform: scale(1.2);
               box-shadow:
                 0 5px 15px color-mix(in srgb, var(--sector-color), transparent 25%),
                 0 0 0 5px color-mix(in srgb, var(--sector-color), transparent 80%);
@@ -578,72 +577,16 @@ section {
 
 #Loading {
   @include flex();
-  background: linear-gradient(to right, #decba4, #3e5151); 
+  background: linear-gradient(to right, #decba4, #3e5151);
 
   img {
     width: 150px;
     height: 150px;
-    animation: loading 1s alternate infinite ;
+    animation: loading 1s alternate infinite;
   }
 }
 // color.adjust($item-color, $lightness: 20%);
 // color.adjust(list.nth($lang-colors, $i), $lightness: -40%);
-
-@keyframes sectorArrow {
-  0% {
-    left: 0%;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    transform: translateX(0) scale(1.12);
-    justify-content: flex-end;
-  }
-
-  20% {
-    left: 0%;
-    width: 100%;
-    height: 100%;
-    border-radius: 0%;
-    transform: translateX(0) scale(1.12);
-    justify-content: flex-end;
-  }
-
-  30% {
-    left: 100%;
-    width: 100%;
-    height: 100%;
-    border-radius: 0%;
-    transform: translateX(-100%) scale(1.12);
-    justify-content: flex-end;
-  }
-
-  40% {
-    left: 100%;
-    width: 100%;
-    height: 100%;
-    border-radius: 0%;
-    transform: translateX(-100%) scale(1.12);
-    justify-content: flex-end;
-  }
-
-  70% {
-    left: 100%;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    transform: translateX(-100%) scale(1.12);
-    justify-content: flex-end;
-  }
-
-  100% {
-    left: 100%;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    transform: translateX(-100%) scale(1.12);
-    justify-content: flex-end;
-  }
-}
 
 @keyframes loading {
   0% {

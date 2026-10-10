@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/plugins/owl.carousel.css" />
     <link rel="stylesheet" href="css/font.css" />
     <link rel="stylesheet" href="css/index.css" />
-
+    <link rel="stylesheet" href="css/keyframes.css" />
     <link rel="icon" type="image/x-icon" href="./images/logo.png" />
   </head>
   <body>
@@ -75,7 +75,7 @@
     <header id="Home">
       <div class="container">
         <div class="row">
-          <div  class="animate__animated animate__bounceIn col-md-6 col-12 part1 d-flex flex-column align-items-start justify-content-center">
+          <div class="animate__animated animate__bounceIn col-md-6 col-12 part1 d-flex flex-column align-items-start justify-content-center">
             <h1 class="my-2 fw-bolder">L10N House</h1>
             <p class="my-2">will help you communicate your message</p>
             <div class="cd-intro">
@@ -92,8 +92,8 @@
               <span class="fw-bolder">Play Video</span>
             </div>
           </div>
-          <div class=" col-md-6 col-12 part2">
-            <img   src="./images/globe-png-39540.png" alt="" class="animate__animated animate__zoomIn img-fluid m-auto d-block" />
+          <div class="col-md-6 col-12 part2">
+            <img src="./images/globe-png-39540.png" alt="" class="animate__animated animate__zoomIn img-fluid m-auto d-block" />
           </div>
         </div>
       </div>
@@ -148,7 +148,7 @@
     </section>
 
     <section id="Video">
-      <div class="content  text-center">
+      <div class="content text-center">
         <div class="title mb-5 animate__animated animate__heartBeat wow">
           <h2>WATCH VIDEO</h2>
         </div>
@@ -204,7 +204,6 @@
       </div>
     </section>
 
-
     <div id="Language_Sectors">
       <section class="language-sectors py-5">
         <div class="content">
@@ -245,8 +244,9 @@
         <div class="title mb-3 animate__bounceInUp wow animate__animated">
           <h2>GET IN TOUCH</h2>
         </div>
-        <p class="text-white mb-5 m-auto text-center animate__bounceInDown wow animate__animated">For More information, please do not hesitate to contact us</p>
-
+        <p class="text-white mb-5 m-auto text-center animate__bounceInDown wow animate__animated">
+          For More information, please do not hesitate to contact us
+        </p>
 
         <div class="container">
           <div class="row row-gap-4">
@@ -338,7 +338,7 @@
       <div class="content"></div>
     </div>
 
-    <div class="video popup py-5" data-popup-name="video">
+    <div class="video popup py-5" data-popup-name="video" onclick="closePopup('video')">
       <div class="content">
         <iframe
           controls
@@ -356,9 +356,8 @@
       To Top
     </div>
 
-
     <div class="popup" id="Loading">
-      <img src="./images/logo.png" alt="">
+      <img src="./images/logo.png" alt="" />
     </div>
     <footer class="bg-dark py-2 text-light text-center">&copy; 2021 <span class="fw-bolder">SemiCode</span> , Ltd. | All Rights Reserved .</footer>
     <script src="js/bootstrap.js"></script>
